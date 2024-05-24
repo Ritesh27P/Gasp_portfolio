@@ -7,20 +7,19 @@
     --color-secondary: #000;
 }
 html {
-	overflow-y: scroll;
+	/* overflow-y: scroll; */
     overflow-x: hidden;
 	height: 100%;
 	-webkit-overflow-scrolling: touch;
-	overflow-scrolling: touch;
-    background-color: white;
+	/* overflow-scrolling: touch; */
     transition-duration: 3s;
 }
 body {
 	overflow-y: visible;
 	position: relative;
     height: unset;
-    background-color: black;
-    color: white
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
 }
 html, body {
 	overflow-x: hidden;
@@ -32,7 +31,7 @@ header {
     justify-content: space-between;
 }
 .hero-sec {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,4 +81,20 @@ header {
   display: flex;
   height: 100vh;
   background: yellow;
+}
+
+.experiment-text {
+    font-size: 35vw;
+    font-weight: 400;
+    text-transform: uppercase;
+    background: lime;
+}
+
+#cursor {
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 100;
 }
