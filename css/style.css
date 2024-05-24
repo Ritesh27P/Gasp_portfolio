@@ -1,0 +1,85 @@
+:root {
+    --primary: '#000';
+    --secondary: '#fffff';
+    --color-face: #fc0022;
+    --color1: #fff;
+    --color-primary: #fff;
+    --color-secondary: #000;
+}
+html {
+	overflow-y: scroll;
+    overflow-x: hidden;
+	height: 100%;
+	-webkit-overflow-scrolling: touch;
+	overflow-scrolling: touch;
+    background-color: white;
+    transition-duration: 3s;
+}
+body {
+	overflow-y: visible;
+	position: relative;
+    height: unset;
+    background-color: black;
+    color: white
+}
+html, body {
+	overflow-x: hidden;
+	margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+.hero-sec {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.hero-intro {
+    font-size: 2rem;
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    /* color: darkcyan; */
+    color: #B100FF;
+    /* background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+/* .about-sec {
+    font-size: 1lvw;
+} */
+
+.container1 {
+	width: 400%;
+	height: 100vh;
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.firstContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: yellow;
+}
+
+.panel {
+    min-width: 100vw;
+}
+
+.lastContainer {
+  display: flex;
+  height: 100vh;
+  background: yellow;
+}
