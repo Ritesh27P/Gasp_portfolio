@@ -25,18 +25,22 @@ mainEl.addEventListener('mousemove', function(dets){
 //     }
 // });
 
-gsap.to('.experiment-sec h1', {
-    color: 'white',
-    transform: 'translateX(-50%)',
-    scrollTrigger: {
-        trigger: '.experiment-sec',
-        scroller: 'body',
-        start: 'top 0%',
-        end: 'top -100%',
-        scrub: 3,
-        pin: true
-    }
-})
+// gsap.to('.experiment-sec h1', {
+//     color: 'white',
+//     transform: 'translateX(-50%)',
+//     scrollTrigger: {
+//         trigger: '.experiment-sec',
+//         scroller: 'body',
+//         start: 'top 0%',
+//         end: 'top -100%',
+//         scrub: 3,
+//         pin: true,
+//         onEnter: () => { getLight() },
+//         onLeaveBack: () => { getDark() }
+//     }
+// })
+
+
 
 // gsap.to('.experiment-text', {
 //     y: 100,
@@ -104,6 +108,24 @@ tl1.to('.img-div', {
     repeat: -1
 })
 
+// gsap.from('.wanna-know', {
+//     opacity: 0,
+//     duration: 1,
+//     scrollTrigger: {
+//         trigger: '#experience-sec',
+//         scroller: 'body',
+//         start: 'top 30%',
+//         end: 'top -100%',
+//         scrub: 3,
+//         pin: true,
+//         onEnter: () => { getLight() },
+//         onEnterBack: () => { getLight() },
+//         onLeaveBack: () => { getDark() }
+//     }
+// })
+
+
+
 
 const tl2 = new TimelineLite({paused: true, reversed: true});
 
@@ -120,10 +142,22 @@ tl2
 const getLight = () => {
     document.documentElement.style.setProperty('--color-primary', '#000');
     document.documentElement.style.setProperty('--color-secondary', '#fff');
+    gsap.to('body', {
+        backgroundColor: 'white',
+        color: 'black',
+        duration: 3,
+        overwrite: 'auto'
+    })
 }
 const getDark = () => {
     document.documentElement.style.setProperty('--color-primary', '#fff');
     document.documentElement.style.setProperty('--color-secondary', '#000');
+    gsap.to('body', {
+        backgroundColor: 'black',
+        color: 'white',
+        duration: 3,
+        overwrite: 'auto'
+    })
 }
 
 var path = `M 10 100 Q 500 100 990 100`;
@@ -149,4 +183,76 @@ string.addEventListener("mouseleave", function() {
         ease: 'elastic.out(1, 0.2)'
     })
 })
+
+
+// Experience Section
+
+const container = document.querySelector(".experience-containr");
+const sections = gsap.utils.toArray(".experience-section");
+const texts = gsap.utils.toArray(".anim");
+const mask = document.querySelector(".mask");
+
+gsap.from('.experience-text', {
+    opacity: 0,
+    scrollTrigger: {
+        trigger: '.experience-text',
+        start: 'top 60%',
+        end: 'top 30%',
+        scrub: 2,
+        onEnter: getLight,
+        onLeaveBack: getDark
+
+    }
+})
+
+let scrollTween = gsap.to(sections, {
+  xPercent: -100 * (sections.length - 1),
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".experience-container",
+    pin: true,
+    scrub: 1,
+    // start: 'top 30%',
+    end: "+=3000",
+    //snap: 1 / (sections.length - 1),
+    onEnterBack: getLight
+  }
+});
+
+console.log(1 / (sections.length - 1))
+
+//Progress bar animation
+
+gsap.to(mask, {
+  width: "100%",
+  scrollTrigger: {
+    trigger: ".wrapper",
+    start: "top left",
+    scrub: 1
+  }
+});
+
+// whizz around the sections
+sections.forEach((section) => {
+  // grab the scoped text
+  let text = section.querySelectorAll(".anim");
+  
+  // bump out if there's no items to animate
+  if(text.length === 0)  return 
+  
+  // do a little stagger
+  gsap.from(text, {
+    y: -130,
+    opacity: 0,
+    duration: 2,
+    ease: "elastic",
+    stagger: 0.1,
+    scrollTrigger: {
+      trigger: section,
+      containerAnimation: scrollTween,
+      start: "left center"
+    }
+  });
+});
+
 
