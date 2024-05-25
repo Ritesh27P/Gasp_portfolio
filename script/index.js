@@ -125,20 +125,6 @@ tl1.to('.img-div', {
 // })
 
 
-
-
-const tl2 = new TimelineLite({paused: true, reversed: true});
-
-tl2
-  .to('.upper', 0.5, {attr: {d: "M8,2 L2,8"}, x: 1, ease:Power2.easeInOut}, 'start')
-  .to('.middle', 0.5, {autoAlpha: 0}, 'start')
-  .to('.lower', 0.5, {attr: {d: "M8,8 L2,2"}, x: 1, ease:Power2.easeInOut}, 'start');
-
-  document.querySelector('.hamburger').addEventListener('click', function(){
-  tl.reversed() ? tl.play() : tl.reverse();
-})
-
-
 const getLight = () => {
     document.documentElement.style.setProperty('--color-primary', '#000');
     document.documentElement.style.setProperty('--color-secondary', '#fff');
@@ -155,7 +141,7 @@ const getDark = () => {
     gsap.to('body', {
         backgroundColor: 'black',
         color: 'white',
-        duration: 3,
+        duration: 2,
         overwrite: 'auto'
     })
 }
