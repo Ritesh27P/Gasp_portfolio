@@ -1,11 +1,11 @@
 gsap.registerPlugin(ScrollTrigger,TextPlugin)
 
 // Cursor //
-const mainEl = document.querySelector('main');
+const mainEl = document.querySelector('body');
 mainEl.addEventListener('mousemove', function(dets){
     gsap.to('#cursor', {
-        x: dets.x,
-        y: dets.y,
+        x: dets.x - 6,
+        y: dets.y -7,
         duration: 1,
         ease: 'back.out'
     })
@@ -75,10 +75,10 @@ tl1.from('.nav-link', {
     opacity: 0
 })
 tl1.from(".char", {
-    x: 50,
-    duration: 0.5,
+    y: 50   ,
+    duration: 0.3,
     opacity: 0,
-    stagger: 0.05
+    stagger: 0.03
 })
 tl1.from('.hero-info', {
     y: 50,
@@ -123,6 +123,18 @@ tl1.to('.img-div', {
 //         onLeaveBack: () => { getDark() }
 //     }
 // })
+let its_me = document.querySelector(".my-img");
+const its_me_animation = gsap.to('.its_me', {
+    paused: true,
+    scale: 1.3,
+    rotate: -30,
+    duration: 2
+})
+
+
+its_me.addEventListener("mouseenter", () => its_me_animation.play());
+its_me.addEventListener("mouseleave", () => its_me_animation.reverse());
+
 
 
 const getLight = () => {
@@ -146,33 +158,32 @@ const getDark = () => {
     })
 }
 
-var path = `M 10 100 Q 500 100 990 100`;
-var finalPath = `M 10 100 Q 500 100 990 100`;
+// var path = `M 10 100 Q 500 100 990 100`;
+// var finalPath = `M 10 100 Q 500 100 990 100`;
 
-var string = document.querySelector('#string')
+// var string = document.querySelector('#string')
 
-string.addEventListener("mousemove", function(dets) {
-    console.log(document.querySelector('#string'))
-    path = `M 10 100 Q 500 ${dets.y - 200} 990 100`    
-    console.log(dets)
-    gsap.to('#string svg path', {
-        attr: { d: path },
-        duration: 0.3,
-        ease: 'power3.out'
-    })
-})
-string.addEventListener("mouseleave", function() {
-    console.log('Leaved')
-    gsap.to("#string svg path", {
-        attr: { d: finalPath },
-        duration: 1.5,
-        ease: 'elastic.out(1, 0.2)'
-    })
-})
+// string.addEventListener("mousemove", function(dets) {
+//     console.log(document.querySelector('#string'))
+//     path = `M 10 100 Q 500 ${dets.y - 200} 990 100`    
+//     console.log(dets)
+//     gsap.to('#string svg path', {
+//         attr: { d: path },
+//         duration: 0.3,
+//         ease: 'power3.out'
+//     })
+// })
+// string.addEventListener("mouseleave", function() {
+//     console.log('Leaved')
+//     gsap.to("#string svg path", {
+//         attr: { d: finalPath },
+//         duration: 1.5,
+//         ease: 'elastic.out(1, 0.2)'
+//     })
+// })
 
 
 // Experience Section
-
 const container = document.querySelector(".experience-containr");
 const sections = gsap.utils.toArray(".experience-section");
 const texts = gsap.utils.toArray(".anim");
@@ -205,10 +216,7 @@ let scrollTween = gsap.to(sections, {
   }
 });
 
-console.log(1 / (sections.length - 1))
-
 //Progress bar animation
-
 gsap.to(mask, {
   width: "100%",
   scrollTrigger: {
@@ -236,9 +244,58 @@ sections.forEach((section) => {
     scrollTrigger: {
       trigger: section,
       containerAnimation: scrollTween,
-      start: "left center"
+      start: "left center",
+      horizontal: true,
+      scrub: true
     }
   });
 });
 
+// Project Section
+// ScrollTrigger.create({
+// 	trigger:".gallery",
+// 	start:"top top",
+// 	end:"bottom bottom",
+// 	pin:".right"
+// })
 
+// const details = gsap.utils.toArray(".details");
+// details.forEach((detail) => {
+//     let val = detail.querySelector('.detail_value');
+
+//     console.log(val.textContent);
+
+//     if (val.length === 0) return
+
+//     gsap.from(val, {
+//     y: -130,
+//     opacity: 0,
+//     duration: 2,
+//     ease: "elastic",
+//     stagger: 0.1,
+//     scrollTrigger: {
+//         trigger: detail,
+//         start: 'top top',
+//         end: '+100%',
+//         scrub: 2,
+//         markers: true
+//     }
+//     })
+// })
+
+// ScrollTrigger.create({
+//     trigger:".contact-form",
+// 	start:"top 20%",
+//     end: '+=1000',
+//     markers: true,
+//     onEnter: getDark
+// })
+
+gsap.to('.contact-container', {
+    scrollTrigger: {
+        trigger: '.contact-form',
+        start: 'top 10%',
+        onEnter: getDark,
+        onEnterBack: getLight,
+    }
+})

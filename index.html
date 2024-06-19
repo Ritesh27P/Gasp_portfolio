@@ -14,6 +14,7 @@
 
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="./css/build_tailwind.css"> -->
     <script>
         tailwind.config = {
           theme: {
@@ -84,10 +85,23 @@
 
     </header>
     
+    <div id="cursor" class="hidden md:block cursor-none"></div>
 
     <main class="main-sec relative">
-
-        <div id="cursor" class="hidden md:block"></div>
+        
+        <!-- <svg id="cursor" class="z-1000" width="53" height="51" viewBox="0 0 53 51" fill="var(--color-primary)" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.99258 33.7775C6.71504 32.4844 5.37166 31.895 4.171 31.7488C3.0827 31.6163 1.7794 31.9811 1.10832 32.8902C0.929771 33.131 0.825921 33.4085 0.782194 33.7035C0.617612 34.8226 1.32817 36.1964 2.14804 36.8382C3.0748 37.5642 4.25663 37.5142 5.30546 37.0639C6.53527 36.5348 7.27073 35.0755 6.99258 33.7775Z"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.7773 40.6412C15.17 40.9434 14.6763 41.918 14.5086 42.4809C14.2062 43.4971 14.6459 45.0666 15.7488 45.4561C16.9476 45.8799 17.5895 44.9606 17.6867 43.8758C17.7723 42.9198 17.4766 41.5641 16.7757 40.8555C16.432 40.5087 16.0895 40.4865 15.7773 40.6412Z"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M40.228 29.2775C41.063 29.1962 41.9667 28.956 42.7441 28.6465C43.2742 28.4352 43.7814 28.1463 44.2417 27.7941C46.2671 26.2451 47.2339 23.3091 45.4077 21.2027C44.7288 20.4194 43.5348 19.8331 42.5224 19.6747C40.5462 19.3671 38.556 20.0998 36.5695 19.7771C35.743 19.6428 34.8065 19.3208 34.4038 18.5285C33.8828 17.5033 34.5077 16.1505 34.7937 15.1392C35.5322 12.5264 34.7974 10.1647 32.4143 8.73916C30.7357 7.735 28.3076 7.71092 26.431 8.06069C25.0506 8.31715 24.1214 9.12264 23.3963 10.2755C22.7956 11.2291 22.3566 12.8906 21.0162 13.0237C20.0609 13.1188 19.2514 12.4397 18.4576 12.0243C17.5746 11.5626 16.5774 11.388 15.6087 11.7179C13.5614 12.4151 13.8007 14.5317 13.7898 16.2643C13.7843 17.124 13.7005 18.3503 12.5752 18.3961C11.4109 18.4436 10.3633 17.3449 9.50763 16.7068C8.24988 15.7689 6.70609 15.6268 5.19631 16.0669C3.32275 16.6129 2.50166 18.5761 2.65409 20.3863C2.82475 22.4109 4.16205 23.8852 5.66758 25.1302C6.86581 26.1211 8.37377 26.9519 9.30721 28.2203C10.0979 29.2955 9.85258 30.7771 9.78456 32.0178C9.72444 33.1147 9.79063 34.288 10.2734 35.2958C10.6548 36.0917 11.4456 36.8363 12.2029 37.2716C15.418 39.121 20.3828 38.9675 23.44 36.9026C24.6042 36.1151 25.7854 35.1314 27.2576 35.7557C28.259 36.1802 28.986 37.0049 29.7998 37.69C30.6561 38.4112 31.6509 38.9073 32.775 39.0566C34.0109 39.2203 35.4059 38.9566 36.4007 38.1873C37.4082 37.4077 37.7878 36.0688 37.3535 34.8804C36.9151 33.6818 35.3889 32.9841 35.3755 31.582C35.3543 29.4069 38.7589 29.4213 40.228 29.2775Z"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.06889 27.6346C1.83229 27.9982 3.85221 27.9832 3.11858 26.6058C3.1125 26.5943 3.10643 26.5841 3.10036 26.5727C2.78637 26.017 2.12926 25.5553 1.48004 25.7064C0.945608 25.831 0.453684 26.2771 0.503484 26.8671C0.534457 27.2319 0.747016 27.4811 1.06889 27.6346Z"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M43.0153 15.5161C44.5087 14.4276 43.3803 12.6047 41.7533 12.8239C40.4804 12.9955 39.5136 14.117 40.4901 15.2572C41.2584 16.1542 42.3096 16.0314 43.0153 15.5161Z"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.4497 8.23594C18.4564 8.23474 18.4625 8.23353 18.4692 8.23233C19.586 8.00718 19.0795 6.36007 18.2147 6.17224C16.9685 5.90193 16.841 8.53213 18.4497 8.23594Z"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.765 40.7843C9.96762 40.7633 9.10038 41.0709 8.55015 41.4622C6.81809 42.6939 5.72007 44.9479 5.61986 47.0387C5.55002 48.4998 6.36564 50.1649 7.90215 50.5358C9.86681 51.0096 11.3711 48.823 11.9973 47.2963C12.7151 45.5463 13.6091 43.0895 12.2183 41.4116C11.8606 40.9794 11.3298 40.7994 10.765 40.7843Z"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2297 39.4353C25.1635 39.3974 25.0961 39.3667 25.0299 39.3444C24.2786 39.0898 23.5893 39.8375 23.4806 40.5689C23.3185 41.6537 24.9285 42.8271 25.7204 41.7615C26.1862 41.1348 25.8789 39.811 25.2297 39.4353Z"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M51.9293 35.4361C51.6402 34.6499 50.937 34.1213 50.2179 33.7408C48.2982 32.7228 45.5957 32.0726 43.4379 32.6078C42.168 32.9221 41.1216 33.8889 41.6761 35.217C42.4844 37.1536 44.9276 38.6719 46.8407 39.3432C48.3741 39.8814 50.2094 39.7026 51.3919 38.5058C51.7156 38.1777 51.9281 37.7514 52.0362 37.2939C52.1808 36.6793 52.1389 36.0068 51.9293 35.4361Z"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.145 9.13172C13.3219 9.92577 14.6441 9.49774 15.0315 8.12214C15.2228 7.44186 15.2623 6.71162 15.2034 5.97355C15.105 4.7316 14.7297 3.46737 14.3368 2.37953C13.7623 0.7872 12.1832 -0.278364 10.4542 0.0641816C9.6726 0.218899 9.13817 0.810679 8.8831 1.53671C8.36202 3.01465 8.91953 4.57206 9.60883 5.89409C10.2404 7.10233 10.9874 8.3503 12.145 9.13172Z"/>
+        </svg> -->
+            
 
         <section class="hero-sec md:h-screen flex flex-col md:flex-row justify-evenly">
             <div class="hero-content w-full md:w-1/2  p-12 md:p-0 mt-12 md:mt-6 lg:mt-0">
@@ -104,7 +118,7 @@
 
                 <div class="explore flex mt-12 justify-start items-center gap-4">
                     <h5 class="text-2xl explore-text">Explore</h5>
-                    <div class="explore-symbol flex justify-center items-center text-center bg-[#03AED2] p-2 px-4 rounded-[50px] text-2xl cursor-pointer">
+                    <div class="explore-symbol flex justify-center items-center text-center bg-[#03AED2] p-2 px-4 rounded-[50px] text-2xl cursor-pointer hover:scale-[2]">
                         <h1 class="mb-1">&rarr;</h1>
                     </div>
                 </div>
@@ -119,7 +133,7 @@
             
             <div class="my-img relative w-full md:w-[500px] px-4">
                 <img src="./assets/images/Profile-r1.jpg" class="w-fit h-full rounded-lg" alt="Me">
-                <img src="./assets/images/svg/Its_me.svg" alt="Its me" class="absolute top-0 w-1/4">
+                <img src="./assets/images/svg/Its_me.svg" alt="Its me" class="its_me absolute top-0 w-1/4">
             </div>
 
             <div class="about-detail w-11/12 md:w-full">
@@ -162,19 +176,68 @@
                     <path d="M9.89998 6C9.43671 8.28224 7.41896 10 5 10C2.23858 10 0 7.76142 0 5C0 2.23858 2.23858 0 5 0C7.41896 0 9.43671 1.71776 9.89998 4H445.1C445.563 1.71776 447.581 0 450 0C452.419 0 454.437 1.71776 454.9 4H890.1C890.563 1.71776 892.581 0 895 0C897.761 0 900 2.23858 900 5C900 7.76142 897.761 10 895 10C892.581 10 890.563 8.28224 890.1 6H454.9C454.437 8.28224 452.419 10 450 10C447.581 10 445.563 8.28224 445.1 6H9.89998Z" fill="#D9D9D9"/>
                     </mask>
                     <g mask="url(#mask0_0_1)">
-                    <rect class="mask" y="-49" height="99" fill="black"/>
+                    <rect class="mask" y="-49" height="99" fill="var(--color-primary)"/>
                     </g>
-                    </svg>
+                </svg>
+
                 <section class="sec1 pin experience-section mt-32 md:mt-0">
-                    <span>Advanced</span>
-                    <h1>Signify Elegance</h1>
+                    <span class="anim font-bold">Openleaf</span>
+                    <h1 class="anim">Full Stack Developer</h1>
     
-                    <div class="col">
-                        <p>Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit sed massa turpis in. Sit praesent arcu leo lectus pellentesque. Ornare elit orci morbi volutpat. Ut fermentum lorem morbi quis risus amet urna. Urna egestas lorem.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit sed massa turpis in. Sit praesent arcu leo lectus pellentesque. Ornare elit orci morbi volutpat. Ut fermentum lorem morbi quis risus amet urna. Urna egestas lorem.</p>
+                    <div class="col anim">
+
+                        <ul class="flex flex-col gap-2 list-disc ml-4 md:ml-12">
+                            <li class="">Implementation of 3 major courier integrations, optimizing 
+                                delivery routes and reducing delivery costs by 15% annually.</li>
+                            <li>Implemented advanced Openleaf Dashboard functionality, 
+                                providing real-time insights and actionable data to 50+ 
+                                businesses; increased user engagement by 40% </li>
+                            <li>Created a Shopify App that streamlines online store 
+                                management. </li>
+                        </ul>
+
                     </div>
                 </section>
-                <section class="sec2 pin experience-section mt-32 md:mt-0">
+
+                <section class="sec1 pin experience-section mt-32 md:mt-0">
+                    <span class="anim font-bold">Openleaf</span>
+                    <h1 class="anim">Full Stack Developer</h1>
+    
+                    <div class="col anim">
+
+                        <ul class="flex flex-col gap-2 list-disc ml-4 md:ml-12">
+                            <li class="">Implementation of 3 major courier integrations, optimizing 
+                                delivery routes and reducing delivery costs by 15% annually.</li>
+                            <li>Implemented advanced Openleaf Dashboard functionality, 
+                                providing real-time insights and actionable data to 50+ 
+                                businesses; increased user engagement by 40% </li>
+                            <li>Created a Shopify App that streamlines online store 
+                                management. </li>
+                        </ul>
+
+                    </div>
+                </section>
+
+                <section class="sec1 pin experience-section mt-32 md:mt-0">
+                    <span class="anim font-bold">Openleaf</span>
+                    <h1 class="anim">Full Stack Developer</h1>
+    
+                    <div class="col">
+
+                        <ul class="flex flex-col gap-2 list-disc ml-4 md:ml-12">
+                            <li class="">Implementation of 3 major courier integrations, optimizing 
+                                delivery routes and reducing delivery costs by 15% annually.</li>
+                            <li>Implemented advanced Openleaf Dashboard functionality, 
+                                providing real-time insights and actionable data to 50+ 
+                                businesses; increased user engagement by 40% </li>
+                            <li>Created a Shopify App that streamlines online store 
+                                management. </li>
+                        </ul>
+
+                    </div>
+                </section>
+
+                <!-- <section class="sec2 pin experience-section mt-32 md:mt-0">
                     <span class="anim">Advanced</span>
                     <h1 class="anim">Signify Elegance</h1>
     
@@ -190,11 +253,58 @@
                     <div class="col anim">
                         <p>Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit sed massa turpis in. Sit praesent arcu leo lectus pellentesque. Ornare elit orci morbi volutpat. Ut fermentum lorem morbi quis risus amet urna. Urna egestas lorem.</p>
                         <p>Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit sed massa turpis in. Sit praesent arcu leo lectus pellentesque. Ornare elit orci morbi volutpat. Ut fermentum lorem morbi quis risus amet urna. Urna egestas lorem.</p>
-                    </div></section>
+                    </div></section> -->
             </div>
 
         </div>
 
+        <!-- <section id="project-sec" class="gallery">
+                <div class="left">
+                    <div class="detailsWrapper">
+                        <div class="details">
+                            <div class="headline"></div>
+                            <div class="text"></div>
+                            <div class="text"></div>
+                            <div class="text"></div>
+                            <div class="text"></div>
+
+                            <div class="detail_value">
+                                <h1>Details Value 1</h1>
+                            </div>
+                        </div>
+            
+                        <div class="details">
+                            <div class="headline"></div>
+                            <div class="text"></div>
+                            <div class="text"></div>
+                            <div class="text"></div>
+                            <div class="text"></div>
+
+                            <div class="detail_value">
+                                <h1>Details Value 2</h1>
+                            </div>
+                        </div>
+            
+                        <div class="details flex">
+                            <div class="headline"></div>
+                            <div class="text"></div>
+                            <div class="text"></div>
+                            <div class="text"></div>
+                            <div class="text"></div>
+
+                            <div class="detail_value">
+                                <h1>Details Value 3</h1>
+                            </div>
+
+                        </div>
+            
+                    </div>
+                </div>
+            
+                <div class="right">
+                    <div class="photos"></div>
+                </div>
+        </section> -->
 
         <!-- <div class="section">
             <div id="string" class="bg-red-500">
@@ -202,51 +312,83 @@
                     <path d="M 10 100 Q 500 100 990 100" stroke="white" fill="transparent"></path>
                 </svg>
             </div>
-        </div>
-
-        <div class="firstContaine bg-black">
-            <h1>Testing horizontal scrolling w/ three sections</h1>
-            <h2>First Container</h2>
-
-            <svg width="200px" height="" viewBox="0 0 370 98.88707758054444" class="looka-1j8o68f text-black" fill="var(--color-primary)">
-                <defs id="SvgjsDefs1100"></defs>
-                <g id="SvgjsG1101" featurekey="tOsHRK-0" transform="matrix(1.1764707994296444,0,0,1.1764707994296444,-8.823840659438309,-9.38045838397906)" >
-                    <g xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.191,64.081c-0.457-2.148-2.669-3.127-4.646-3.37   c-1.792-0.22-3.938,0.386-5.043,1.896c-0.294,0.4-0.465,0.861-0.537,1.351c-0.271,1.859,0.899,4.141,2.249,5.207   c1.526,1.206,3.472,1.123,5.199,0.375C17.438,68.661,18.649,66.237,18.191,64.081z"></path>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M32.656,75.482c-1,0.502-1.813,2.121-2.089,3.056   c-0.498,1.688,0.226,4.295,2.042,4.942c1.974,0.704,3.031-0.823,3.191-2.625c0.141-1.588-0.346-3.84-1.5-5.017   C33.734,75.262,33.17,75.225,32.656,75.482z"></path>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M72.916,56.606c1.375-0.135,2.863-0.534,4.143-1.048   c0.873-0.351,1.708-0.831,2.466-1.416c3.335-2.573,4.927-7.45,1.92-10.949c-1.118-1.301-3.084-2.275-4.751-2.538   c-3.254-0.511-6.531,0.706-9.802,0.17c-1.361-0.223-2.903-0.758-3.566-2.074c-0.858-1.703,0.171-3.95,0.642-5.63   c1.216-4.34,0.006-8.263-3.918-10.631c-2.764-1.668-6.762-1.708-9.852-1.127c-2.273,0.426-3.803,1.764-4.997,3.679   c-0.989,1.584-1.712,4.344-3.919,4.565c-1.573,0.158-2.906-0.97-4.213-1.66c-1.454-0.767-3.096-1.057-4.691-0.509   c-3.371,1.158-2.977,4.674-2.995,7.552c-0.009,1.428-0.147,3.465-2,3.541c-1.917,0.079-3.642-1.746-5.051-2.806   c-2.071-1.558-4.613-1.794-7.099-1.063c-3.085,0.907-4.437,4.168-4.186,7.175c0.281,3.363,2.483,5.812,4.962,7.88   c1.973,1.646,4.456,3.026,5.993,5.133c1.302,1.786,0.898,4.247,0.786,6.308c-0.099,1.822,0.01,3.771,0.805,5.445   c0.628,1.322,1.93,2.559,3.177,3.282c5.294,3.072,13.469,2.817,18.503-0.613c1.917-1.308,3.862-2.942,6.286-1.905   c1.649,0.705,2.846,2.075,4.186,3.213c1.41,1.198,3.048,2.022,4.899,2.27c2.035,0.272,4.332-0.166,5.97-1.444   c1.659-1.295,2.284-3.519,1.569-5.493c-0.722-1.991-3.235-3.15-3.257-5.479C64.891,56.821,70.497,56.845,72.916,56.606z"></path>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.437,53.877c1.257,0.604,4.583,0.579,3.375-1.709   c-0.01-0.019-0.02-0.036-0.03-0.055c-0.517-0.923-1.599-1.69-2.668-1.439c-0.88,0.207-1.69,0.948-1.608,1.928   C7.557,53.208,7.907,53.622,8.437,53.877z"></path>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M77.506,33.747c2.459-1.808,0.601-4.836-2.078-4.472   c-2.096,0.285-3.688,2.148-2.08,4.042C74.613,34.807,76.344,34.603,77.506,33.747z"></path>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M37.056,21.654c0.011-0.002,0.021-0.004,0.032-0.006   c1.839-0.374,1.005-3.11-0.419-3.422C34.617,17.777,34.407,22.146,37.056,21.654z"></path>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M24.403,75.72c-1.313-0.035-2.741,0.476-3.647,1.126   c-2.852,2.046-4.66,5.79-4.825,9.263c-0.115,2.427,1.228,5.193,3.758,5.809c3.235,0.787,5.712-2.845,6.743-5.381   c1.182-2.907,2.654-6.988,0.364-9.775C26.207,76.044,25.333,75.745,24.403,75.72z"></path>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M48.22,73.479c-0.109-0.063-0.22-0.114-0.329-0.151   c-1.237-0.423-2.372,0.819-2.551,2.034c-0.267,1.802,2.384,3.751,3.688,1.981C49.795,76.302,49.289,74.103,48.22,73.479z"></path>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M92.184,66.836c-0.476-1.306-1.634-2.184-2.818-2.816   c-3.161-1.691-7.611-2.771-11.164-1.882c-2.091,0.522-3.814,2.128-2.901,4.334c1.331,3.217,5.354,5.739,8.504,6.854   c2.525,0.894,5.547,0.597,7.494-1.391c0.533-0.545,0.883-1.253,1.061-2.013C92.598,68.901,92.529,67.784,92.184,66.836z"></path>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M26.675,23.142c1.938,1.319,4.115,0.608,4.753-1.677   c0.315-1.13,0.38-2.343,0.283-3.569c-0.162-2.063-0.78-4.163-1.427-5.97c-0.946-2.645-3.546-4.415-6.393-3.846   c-1.287,0.257-2.167,1.24-2.587,2.446c-0.858,2.455,0.06,5.042,1.195,7.238C23.539,19.771,24.769,21.844,26.675,23.142z"></path>
-                    </g>
-                </g>
-            </svg>
-    
-        </div>
-        <div class="container1">
-            <div class="description panel blue w-100vh bg-lime-400">
-                <div>
-                    SCROLL DOWN
-                    <div class="scroll-down"><div class="arrow"></div></div>
-                </div>
-            </div>
-        
-            <div class="horizonal_scroll panel red bg-red-400">
-                ONE
-            </div>
-            <div class="horizonal_scroll panel orange">
-                TWO
-            </div>
-            <div class="horizonal_scroll panel purple">
-                THREE
-            </div>
-        </div>
-        <div class="lastContainer">
-            Last Container
         </div> -->
+
+
+        <section class="contact-form body-font relative bg-gray-900 text-gray-400">
+
+            <div class="contact-container container mx-auto px-5 py-24">
+              
+              <div class="mb-12 flex w-full flex-col text-center">
+                <h1 class="title-font mb-4 text-2xl font-medium text-white sm:text-3xl">Contact Us</h1>
+                <p class="mx-auto text-base leading-relaxed lg:w-2/3">Feel free to reach out to us! Whether you have a question,
+                  feedback, or a collaboration proposal, we'd love to hear from you.
+                </p>
+              </div>
+          
+              <div class="mx-auto md:w-2/3 lg:w-1/2">
+                <div class="-m-2 flex flex-wrap">
+          
+                  <!-- form -->
+                  <div class="w-1/2 p-2">
+                    <div class="relative">
+                      <input type="text" id="name" name="name" class="peer w-full rounded border border-gray-700 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-8 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900" placeholder="Name" />
+                      <label for="name" class="absolute left-3 -top-6 bg-transparent text-sm leading-7 text-indigo-500 transition-all peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 peer-placeholder-shown:bg-gray-900 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-indigo-500">Name</label>
+                    </div>
+                  </div>
+                  <div class="w-1/2 p-2">
+                    <div class="relative">
+                      <input type="email" id="email" name="email" class="peer w-full rounded border border-gray-700 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-8 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900" placeholder="Email" />
+                      <label for="email" class="absolute left-3 -top-6 bg-transparent text-sm leading-7 text-indigo-500 transition-all peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 peer-placeholder-shown:bg-gray-900 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-indigo-500">Email</label>
+                    </div>
+                  </div>
+                  <div class="mt-4 w-full p-2">
+                    <div class="relative">
+                      <textarea id="message" name="message" class="peer h-32 w-full resize-none rounded border border-gray-700 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-6 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900" placeholder="Message"></textarea>
+                      <label for="message" class="absolute left-3 -top-6 bg-transparent text-sm leading-7 text-indigo-500 transition-all peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 peer-placeholder-shown:bg-gray-900 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-indigo-500">Message</label>
+                    </div>
+                  </div>
+                  <div class="w-full p-2">
+                    <button class="mx-auto flex rounded border-0 bg-indigo-500 py-2 px-8 text-lg text-white hover:bg-indigo-600 focus:outline-none">Contact</button>
+                  </div>
+          
+          
+                  <!-- footer -->
+                  <div class="mt-8 w-full border-t border-gray-800 p-2 pt-8 text-center">
+                    <a class="text-indigo-400">riteshminecraft27@gmail.com</a>
+                    <p class="my-5 leading-normal">Mumbai, India</p>
+                    <span class="inline-flex">
+                      <a class="text-gray-500">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="h-5 w-5" viewBox="0 0 24 24">
+                          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                      </a>
+                      <a class="ml-4 text-gray-500">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="h-5 w-5" viewBox="0 0 24 24">
+                          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                        </svg>
+                      </a>
+                      <a class="ml-4 text-gray-500">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="h-5 w-5" viewBox="0 0 24 24">
+                          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                        </svg>
+                      </a>
+                      <a class="ml-4 text-gray-500">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="h-5 w-5" viewBox="0 0 24 24">
+                          <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </div>
+          
+                </div>
+              </div>
+          
+            </div>
+            
+          </section>
+
 
     </main>
 
