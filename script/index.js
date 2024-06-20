@@ -2,14 +2,69 @@ gsap.registerPlugin(ScrollTrigger,TextPlugin)
 
 // Cursor //
 const mainEl = document.querySelector('body');
-mainEl.addEventListener('mousemove', function(dets){
-    gsap.to('#cursor', {
-        x: dets.x - 6,
-        y: dets.y -7,
-        duration: 1,
-        ease: 'back.out'
+let cursor = document.querySelector('.cursor');
+let cursorScale = document.querySelectorAll('.cursor-scale'); 
+let mouseX = 0;
+let mouseY = 0;
+
+gsap.to({}, 0.016, {
+  repeat: -1,
+  onRepeat: function(){
+    gsap.set(cursor, {
+        ease: 'elastic.out',
+        duration: 3,
+      css: {
+        left: mouseX,
+        top: mouseY,
+      }
     })
+  }
+});
+
+window.addEventListener('mousemove', (e)=> {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
 })
+
+cursorScale.forEach(link => {
+  link.addEventListener('mousemove', ()=> {
+    cursor.classList.add('grow'); 
+    if (link.classList.contains('small')){
+      cursor.classList.remove('grow');
+      cursor.classList.add('grow-small');
+    }
+  });
+  
+  link.addEventListener('mouseleave', ()=> {
+    cursor.classList.remove('grow');
+    cursor.classList.remove('grow-small');
+  });
+})
+
+
+// Scroll Function
+function scrollToFn(idName) {
+    console.log(idName);
+    if (idName === 'about') {
+
+        window.scrollTo({
+            top: 600,
+            behavior: 'smooth'
+        })
+
+    } else {
+        
+        document.getElementById(idName).scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+
+    }
+}
+// document.querySelectorAll(".nav-link").forEach((btn, index) => {
+//     btn.addEventListener("click", () => {
+//       gsap.to(window, {duration: 1, scrollTo:{y:"#section" + (index + 1), offsetY:70}});
+//     });
+// });
 
 // let sections = gsap.utils.toArray(".panel");
 
@@ -291,11 +346,11 @@ sections.forEach((section) => {
 //     onEnter: getDark
 // })
 
-gsap.to('.contact-container', {
-    scrollTrigger: {
-        trigger: '.contact-form',
-        start: 'top 10%',
-        onEnter: getDark,
-        onEnterBack: getLight,
-    }
-})
+// gsap.to('.contact-container', {
+//     scrollTrigger: {
+//         trigger: '.contact-form',
+//         start: 'top 10%',
+//         onEnter: getDark,
+//         onEnterBack: getLight,
+//     }
+// })
