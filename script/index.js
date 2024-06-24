@@ -150,6 +150,16 @@ tl1.from(".char", {
     opacity: 0,
     stagger: 0.03
 })
+tl1.from('.upper-svg', {
+    y: -150,
+    duration: 0.5,
+    opacity: 0
+})
+tl1.to('.hero-title', {
+    rotate: -1,
+    duration: 0.5,
+    ease: 'power1.out'
+})
 tl1.from('.hero-info', {
     y: 50,
     duration: 0.3,
