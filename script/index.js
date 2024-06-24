@@ -60,6 +60,21 @@ function scrollToFn(idName) {
 
     }
 }
+
+// About Section
+gsap.from('.about-el', {
+    y: 200,
+    opacity: 0,
+    stagger: 0.2,
+    ease: "power1.out",
+    duration: 0.8,
+    scrollTrigger: {
+        trigger: '#about',
+        start: 'top 40%',
+        // markers: true
+    }
+})
+
 // document.querySelectorAll(".nav-link").forEach((btn, index) => {
 //     btn.addEventListener("click", () => {
 //       gsap.to(window, {duration: 1, scrollTo:{y:"#section" + (index + 1), offsetY:70}});
@@ -194,9 +209,9 @@ its_me.addEventListener("mouseleave", () => its_me_animation.reverse());
 
 const getLight = () => {
     document.documentElement.style.setProperty('--color-primary', '#000');
-    document.documentElement.style.setProperty('--color-secondary', '#fff');
+    document.documentElement.style.setProperty('--color-secondary', 'whitesmoke');
     gsap.to('body', {
-        backgroundColor: 'white',
+        backgroundColor: 'whitesmoke',
         color: 'black',
         duration: 3,
         overwrite: 'auto'
@@ -306,51 +321,58 @@ sections.forEach((section) => {
   });
 });
 
-// Project Section
-// ScrollTrigger.create({
-// 	trigger:".gallery",
-// 	start:"top top",
-// 	end:"bottom bottom",
-// 	pin:".right"
-// })
 
-// const details = gsap.utils.toArray(".details");
-// details.forEach((detail) => {
-//     let val = detail.querySelector('.detail_value');
+gsap.set('.photo:not(:first-child)', { opacity: 1, scale: 1, y: '100%' })
+const animation = gsap.to('.photo:not(:first-child)', {
+    opacity: 1,
+    scale: 1,
+    duration: 0.5,
+    stagger: 1,
+    y: '0%',
+})
 
-//     console.log(val.textContent);
+ScrollTrigger.create({
+    trigger: '.gallery',
+    start: 'top top',
+    end: 'bottom bottom',
+    pin: '.right',
+    animation: animation,
+    scrub: true,
+    // markers: true,
+})
 
-//     if (val.length === 0) return
+gsap.to('.gallery', {
+    duration: 1,
+    backgroundColor: '#C0C5FB',
+    scrollTrigger: {
+        trigger: '.d1',
+        scrub: true,
+    },
+})
 
-//     gsap.from(val, {
-//     y: -130,
-//     opacity: 0,
-//     duration: 2,
-//     ease: "elastic",
-//     stagger: 0.1,
+// gsap.to('.gallery', {
+//     duration: 1,
+//     backgroundColor: '#f9d2e5aa',
 //     scrollTrigger: {
-//         trigger: detail,
-//         start: 'top top',
-//         end: '+100%',
-//         scrub: 2,
-//         markers: true
-//     }
-//     })
+//         trigger: '.d2',
+//         scrub: true,
+//     },
 // })
 
-// ScrollTrigger.create({
-//     trigger:".contact-form",
-// 	start:"top 20%",
-//     end: '+=1000',
-//     markers: true,
-//     onEnter: getDark
-// })
+gsap.to('.gallery', {
+    duration: 1,
+    backgroundColor: '#F7F6EB',
+    scrollTrigger: {
+        trigger: '.d3',
+        scrub: true,
+    },
+})
 
-// gsap.to('.contact-container', {
-//     scrollTrigger: {
-//         trigger: '.contact-form',
-//         start: 'top 10%',
-//         onEnter: getDark,
-//         onEnterBack: getLight,
-//     }
-// })
+gsap.to('.gallery', {
+    duration: 1,
+    backgroundColor: '#ffb399aa',
+    scrollTrigger: {
+        trigger: '.d4',
+        scrub: true,
+    },
+})
