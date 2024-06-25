@@ -11,8 +11,8 @@ gsap.to({}, 0.016, {
   repeat: -1,
   onRepeat: function(){
     gsap.set(cursor, {
-        ease: 'elastic.out',
-        duration: 3,
+        ease: 'power1.out',
+        duration: 12,
       css: {
         left: mouseX,
         top: mouseY,
@@ -153,12 +153,13 @@ tl1.from(".char", {
 tl1.from('.upper-svg', {
     y: -150,
     duration: 0.5,
-    opacity: 0
+    opacity: 0,
+    // ease: 'elastic.in'
 })
 tl1.to('.hero-title', {
     rotate: -1,
-    duration: 0.5,
-    ease: 'power1.out'
+    duration: .8,
+    ease: 'elastic.out'
 })
 tl1.from('.hero-info', {
     y: 50,
