@@ -37,6 +37,7 @@ html {
 	/* overflow-scrolling: touch; */
     transition-duration: 9s;
 }
+
 body {
 	overflow-y: visible;
   overflow-x: hidden;
@@ -44,6 +45,7 @@ body {
   height: unset;
   background-color: black;
   color: white;
+  /* cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="%23F0DFF0" stroke="%23000" stroke-width="2"></circle></svg>') 6 6, auto; */
 }
 html, body {
 	margin: 0;
@@ -204,6 +206,10 @@ header {
 .experience-container .col p {
   font-size: 0.8rem;
 }
+.experience-container .col li {
+  font-size: 1rem;
+  font-weight: 700;
+}
 .experience-container section {
   width: 100vw;
   padding: 20vw 10vw;
@@ -266,6 +272,8 @@ header {
   font-family: "Londrina Solid", sans-serif;
   /* background: #efefef; */
   border-radius: 6px;
+  color: #0C1844;
+  font-size: large;
   /* height: 1em; */
   width: 100%;
 }

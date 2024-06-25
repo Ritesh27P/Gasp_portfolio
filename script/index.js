@@ -63,7 +63,7 @@ function scrollToFn(idName) {
 
 // About Section
 gsap.from('.about-el', {
-    y: 200,
+    y: 150,
     opacity: 0,
     stagger: 0.2,
     ease: "power1.out",
@@ -219,11 +219,11 @@ its_me.addEventListener("mouseleave", () => its_me_animation.reverse());
 
 
 const getLight = () => {
-    document.documentElement.style.setProperty('--color-primary', '#000');
-    document.documentElement.style.setProperty('--color-secondary', 'whitesmoke');
+    document.documentElement.style.setProperty('--color-primary', '#0C1844');
+    document.documentElement.style.setProperty('--color-secondary', '#F7F9F2');
     gsap.to('body', {
-        backgroundColor: 'whitesmoke',
-        color: 'black',
+        backgroundColor: '#F7F9F2',
+        color: '#0C1844',
         duration: 3,
         overwrite: 'auto'
     })
