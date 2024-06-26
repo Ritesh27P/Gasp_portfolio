@@ -35,4 +35,3 @@
 <!--
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=omkarkamble1&" alt="omkarkamble1" /></p>
 -->
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=ritesh27p&label=Profile%20views&color=0e75b6&style=flat" alt="Ritesh27P" /> </p>
